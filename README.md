@@ -9,7 +9,7 @@ A leading ride-sharing company currently prices rides primarily based on expecte
 - Maintain Customer Retention: Prevent churn by avoiding over-pricing for loyal customers.
 
 ## Dataset & FeaturesThe model utilizes historical ride data containing the following features:
-
+```
 ----------------------------------------------------------------------------------
 | Feature       | Type        | Description                                      |
 ----------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ A leading ride-sharing company currently prices rides primarily based on expecte
 | Time          | Categorical | Time of day (Morning, Afternoon, Evening, Night) |
 | Vehicle_Type  | Categorical | Class of vehicle (Economy, Premium)              |
 ----------------------------------------------------------------------------------
-
+```
 ## Feature Engineering
 To capture non-linear relationship and market dynamics, several derivative features were engineered:
 - Supply Gap: Riders - Drivers
