@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Pricing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container card mt-5 d-flex align-items-center" style="min-height: 30rem;">
+        <h2>Dynamic Pricing</h2>
+        <p>Predict estimated ride cost based on real-time factors</p>
+        <form action="/predict" method="post">
+            
+            <div class="mt-1">
+                <label for="riders" style="min-width: 10rem;">Number of Riders</label>
+                <input type="number" id="riders" name="riders" value="50" required>
+            </div>
+            <div class="mt-1">
+                <label for="drivers" style="min-width: 10rem;">Number of Drivers</label>
+                <input type="number" id="drivers" name="drivers" value="10" required>
+            </div>
+            <div class="mt-1">
+                <label for="past_rides" style="min-width: 10rem;">Past Rides</label>
+                <input type="number" id="past_rides" name="past_rides" value="50" required>
+            </div>
+            <div class="mt-1">
+                <label for="duration" style="min-width: 10rem;">Duration (mins)</label>
+                <input type="number" id="duration" name="duration" value="100" required>
+            </div>
+            <div class="mt-1">
+                <label for="ratings" style="min-width: 10rem;">Ratings (1.0 - 5.0)</label>
+                <input type="number" id="ratings" name="ratings" step="0.1" min="1.0" max="5.0" value="4.5" required>
+            </div>
+            <div class="mt-1">
+                <label for="category" style="min-width: 10rem;">Category</label>
+                <select id="category" name="category" required>
+                    <option value="Urban" selected>Urban</option>
+                    <option value="Rural">Rural</option>
+                    <option value="Suburban">Suburban</option>
+                </select>
+            </div>
+            <div class="mt-1">
+                <label for="loyalty" style="min-width: 10rem;">Loyalty Status</label>
+                <select id="loyalty" name="loyalty" required>
+                    <option value="Gold" selected>Gold</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Regular">Regular</option>
+                </select>
+            </div>
+            <div class="mt-1">
+                <label for="time" style="min-width: 10rem;">Time</label>
+                <select id="time" name="time" required>
+                    <option value="" disabled selected>Select Time</option>
+                    <option value="Morning" selected>Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                </select>
+            </div>
+            <div class="mt-1">
+                <label for="vehicle_type" style="min-width: 10rem;">Vehicle Type</label>
+                <select id="vehicle_type" name="vehicle_type" required>
+                    <option value="Premium" selected>Premium</option>
+                    <option value="Economy">Economy</option>
+                </select>
+            </div>
+            <button class="mt-3 btn btn-dark d-flex mx-auto" type="submit">Calculate Fare</button>
+        </form>
+        {% if prediction_text %}
+        <div class="alert alert-info mt-3 mb-1 fw-bold" role="alert">
+            {{ prediction_text }}
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
