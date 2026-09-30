@@ -33,7 +33,7 @@ To capture non-linear relationship and market dynamics, several derivative featu
 - Unit Price: Cost / Duration (Price per minute)
 - Priority Mappings & Ordinal Encoding: Encoded order-sensitive variables such as Loyalty tier and Vehicle_Type.
 
-## Data Preprocessing & PipelineData preprocessing is structured using scikit-learn pipelines:
+## Data Preprocessing 
 - Numerical Features: Median imputation using SimpleImputer followed by standard feature scaling via StandardScaler.
 - Categorical Features: Frequent-value imputation using SimpleImputer followed by OneHotEncoder (dropping the first category to avoid multicollinearity).
 
