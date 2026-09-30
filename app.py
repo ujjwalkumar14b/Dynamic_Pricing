@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+import os
 import pandas as pd
 import joblib
+from flask import Flask, render_template, request, jsonify
+
 
 app = Flask(__name__)
 model = joblib.load("model.pkl")
@@ -76,4 +78,5 @@ def predict():
         return render_template("index.html", prediction_text=f"Error: {str(e)}")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
