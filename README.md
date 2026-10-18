@@ -4,7 +4,7 @@ Problem Statement: A leading ride-sharing company currently prices rides primari
 
 Solution: An end-to-end Machine Learning project designed to build a dynamic price prediction model for a ride-sharing service. The system goes beyond basic trip duration pricing by incorporating real-time supply-demand dynamics, customer loyalty profiles, time of day, location categories, and vehicle types.
 
-![Deployment Overview](deployment.png)
+![Deployment](deployment.png)
 
 ## Tech Stack
 - Data Science: NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn
