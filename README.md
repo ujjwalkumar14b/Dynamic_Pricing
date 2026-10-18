@@ -15,7 +15,7 @@ Solution: An end-to-end Machine Learning project designed to build a dynamic pri
 ```
 pip install pandas numpy matplotlib seaborn scikit-learn joblib
 git clone https://github.com/ujjwalkumar14b/Dynamic_Pricing.git
-cd Dynamic_Price_Prediction
+cd Dynamic_Pricing
 ```
 
 ## Author
